@@ -9,31 +9,47 @@
 
 .navbar {
     display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    padding: 20px 40px 0 0;
+    background:transparent;
+    
     
 }
 
-.ul {
-    justify-content: center;
-    list-style-type: none;
+.navbar .ul{
+    display:flex;
+    gap: 30px;
+    font-family: fantasy;
+    font-size: large;
+    margin: 0;
+    padding: 0;
+    
 }
 
 .li {
-    text-align: center;
+    text-decoration: none;
+}
+.navbar .ul .li {
+    list-style-type: none;
 }
 
 .navbar .ul .li .a {
+    font-family: fantasy;   
+    font-size: large;
     cursor: pointer;
-    color: rgb(55, 94, 17);
+    color: white;
 }
-
+    
 .imagen-logo {
+    width: 400px;
     margin: 20px;
     padding: 20px;
     border-radius: 2 solid rgb(55,94,17);
 }
 
 body {
-    background-color: gray;
+    background-color: rgba(20, 47, 168, 0.534);
     background-repeat: no repeat;
     background-size: auto;
 }
