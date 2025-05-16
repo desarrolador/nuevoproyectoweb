@@ -3,7 +3,7 @@
     padding: 0;
     font-family: fantasy;
     font-size: larger;
-    box-sizing: border-box;
+    
 
 }
 
@@ -19,7 +19,9 @@
 
 .navbar .ul{
     display:flex;
+    color: rgb(128, 26, 168);
     gap: 30px;
+    list-style-type: none;
     font-family: fantasy;
     font-size: large;
     margin: 0;
@@ -27,36 +29,35 @@
     
 }
 
-.li {
-    text-decoration: none;
-}
-.navbar .ul .li {
-    list-style-type: none;
-}
 
 .navbar .ul .li .a {
-    font-family: fantasy;   
-    font-size: large;
-    cursor: pointer;
-    color: white;
-}
+    text-decoration: none;
     
+}
+
+.navbar .ul .li .a:hover {
+    cursor: pointer;
+    color:rgb(128, 26, 168)
+}
+
 .imagen-logo {
-    width: 400px;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 2 solid rgb(55,94,17);
+    display: block;
+    width: 100px;
+    margin: 5px 2px 2px 5px;
+    padding: 0px 0px 0px 0px;
+    
 }
 
 body {
-    background-color: rgba(20, 47, 168, 0.534);
+    background-color: rgba(201, 207, 235, 0.534);
     background-repeat: no repeat;
     background-size: auto;
 }
 
 .h1 {
-    color: rgb(55,94,17);
-    font-size: larger;
+    color: rgb(128, 26, 168);
+    font-family: fantasy;
+    font-size: large;
     text-align: center;
 }
 
@@ -66,32 +67,52 @@ body {
     padding: 20px;
 }
 
-.form {
-    display: inline-block;
+.input {
     text-align: center;
+    margin: 10px;
+    padding: 10px;
+    border:10px ;
+    border-radius: 2px solid rgb(87, 54, 87);
     cursor: pointer;
-    color: tomato;
+    color: rgb(26, 22, 22);
 }
+
+.label {
+    cursor: pointer;
+    color: rgb(128, 26, 168);
+}
+
 
 .footer {
-    justify-content: center;
-    font-size: larger;
-    width: 20px;
-
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    padding: 20px 40px 0 0;
+    background:transparent;
+    
+    
 }
 
-.ul {
-    text-align: center;
-}
-
-.li {
+.footer .ul{
+    display:flex;
+    color: rgb(128, 26, 168);
+    gap: 30px;
     list-style-type: none;
-    text-decoration: none;
+    font-family: fantasy;
+    font-size: large;
+    margin: 0;
+    padding: 0;
+    
 }
+
 
 .footer .ul .li .a {
-    cursor: pointer;
-    color: rgb(55, 94, 17);
+    
+    text-decoration: none;
+    
 }
 
-
+.footer .ul .li .a:hover {
+    cursor: pointer;
+    color:rgb(128, 26, 168)
+}
