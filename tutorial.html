@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tutorial css 3</title>
+</head>
+<body>
+     <h1>colores.rgba</h1>
+    <style>
+       .caja-rgba {
+  background-color: rgba(128, 26, 168, 0.5);
+  color: white;
+  padding: 20px;
+}
+    </style>
+
+    <h2>sombras de texto</h2>
+
+    <style>
+        .sombra-texto {
+  color: #333;
+  text-shadow: 2px 2px 5px #888;
+}
+    </style>
+    
+    <h3>sombras de caja</h3>
+
+    <style>
+        .sombra-caja {
+  width: 200px;
+  height: 100px;
+  background: #c9cfeb;
+  box-shadow: 4px 4px 15px #888;
+}
+    </style>
+
+    <h4>transiciones</h4>
+
+    <style>
+        .transicion {
+  background: #802aa8;
+  transition: background 0.5s;
+}
+.transicion:hover {
+  background: #c9cfeb;
+}
+    </style>
+
+    <h5>transformaciones</h5>
+
+    <style>
+
+      .transformar:hover {
+  transform: scale(1.2) rotate(10deg);
+}  
+    </style>
+
+    <h6>animaciones</h6>
+
+    <style>
+
+        @keyframes mover {
+  0% { left: 0; }
+  100% { left: 100px; }
+}
+.animar {
+  position: relative;
+  animation: mover 2s infinite alternate;
+}
+    </style>
+
+    <h1>border-radius(bordes redondeados)</h1>
+
+    <style>
+        .redondeado {
+  background: #802aa8;
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+}
+    </style>
+
+    <h2>gradiantes</h2>
+
+    <style>
+        .gradiente {
+  background: linear-gradient(90deg, #802aa8, #c9cfeb);
+  color: #fff;
+  padding: 20px;
+}
+    </style>
+
+    <h3>flexbox</h3>
+
+    <style>
+        .flex-ejemplo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+.flex-ejemplo div {
+  background: #c9cfeb;
+  padding: 10px;
+}
+    </style>
+
+    <h4>media queries (responsive)</h4>
+
+    <style>
+        @media (max-width: 600px) {
+  .responsive {
+    background: #802aa8;
+    color: #fff;
+    font-size: 20px;
+  }
+}
+    </style>
+</body>
+</html>
