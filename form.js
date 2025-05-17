@@ -1,23 +1,37 @@
-let nombre =document.getElementById("nombre");
-let email =document.getElementById("email");
-let redSocial =document.getElementById("redSocial");
+ document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("formulario");
+    const resultado = document.getElementById("resultado");
 
-let form = document.getElementById("form");
-
-form.addEventListener("submit"), function(event){
-    event.preventDefault();
-    let nombreValue = nombre.ariaValueMax;
-    let emailValue = email.ariaValueMax;
-    let redSocialValue = redSocial.ariaValueMax;
-    console.log(nombreValue);
-    console.log(emailValue);
-    console.log(redSocialValue);
-    if(nombreValue === "" || emailValue === "" ||redSocialValue === ""){
-        alert("por favor completa todos los campos");
+    // Mostrar datos guardados si existen al cargar la página
+    const datosGuardados = localStorage.getItem("usuario");
+    if (datosGuardados) {
+        const usuario = JSON.parse(datosGuardados);
+        resultado.innerHTML = `
+            <h3>Datos registrados:</h3>
+            <p><strong>Nombre:</strong> ${usuario.nombre}</p>
+            <p><strong>Email:</strong> ${usuario.email}</p>
+            <p><strong>Red social:</strong> ${usuario.redSocial}</p>
+        `;
     }
-    else{
-        alert("gracias por tu mensaje,pronto nos pondremos en contacto con vos");
 
-    }
-           
-}
+    // Evento para guardar y mostrar los datos al enviar el formulario
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const nombre = document.getElementById("nombre").value;
+        const email = document.getElementById("email").value;
+        const redSocial = document.getElementById("redSocial").value;
+
+        // Guardar en localStorage
+        const datosUsuario = { nombre, email, redSocial };
+        localStorage.setItem("usuario", JSON.stringify(datosUsuario));
+
+        // Mostrar en pantalla
+        resultado.innerHTML = `
+            <h3>Datos registrados:</h3>
+            <p><strong>Nombre:</strong> ${nombre}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Red social:</strong> ${redSocial}</p>
+        `;
+    });
+});
