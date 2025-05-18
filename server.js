@@ -1,11 +1,3 @@
- const express = require('express');
-const path = require('path');
-const fs = require('fs');
-
-const app = express();
-const PORT = 3000;
-
-// Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public')); // Sirve archivos estáticos
@@ -16,7 +8,7 @@ app.get('/', (req, res) => {
 });
 
 // Ruta para procesar el formulario
-app.post('/registrar', (req, res) => {
+app.post("/registrar-usuario", (req, res) =>{
     const { nombre, email, redsocial } = req.body;
 
     if (!nombre || !email) {
