@@ -1,10 +1,12 @@
+const express = require('express');
+const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public')); // Sirve archivos estáticos
 
 // Ruta para el formulario
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'formulario.html'));
+app.get('/registrar-usuario', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Ruta para procesar el formulario
