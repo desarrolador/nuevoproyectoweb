@@ -1,7 +1,7 @@
 // 1. Importamos los módulos necesarios
 const express = require('express');
-const fs = require('port');
-const path = require('server.js');
+const path = require('path');
+const fs = require('fs');
 
 // 2. Creamos la aplicación Express (esto es obligatorio)
 const app = express();
@@ -31,24 +31,26 @@ app.post('/registrar-usuario', (req, res) => {
     };
 
     // Guardamos en el archivo JSON
-    const archivo = 'usuarios.json';
-    let usuarios = [];
-    
-    try {
-        if (fs.existsSync(archivo)) {
-            usuarios = JSON.parse(fs.readFileSync(archivo, 'utf8'));
-        }
-        usuarios.push(nuevoUsuario);
-        fs.writeFileSync(archivo, JSON.stringify(usuarios, null, 2));
-        
-        res.json({
-            success: true,
-            message: 'Usuario registrado',
-            data: nuevoUsuario
-        });
-    } catch (error) {
-        res.status(500).json({ error: 'Error al guardar' });
+    // Guardamos en el archivo JSON
+const archivo = 'usuario.json';
+let datos = { usuarios:[nombre , email , redsocial]
+} 
+
+try {
+    if (fs.existsSync(archivo)) {
+        datos = JSON.parse(fs.readFileSync(archivo, 'utf8'));
     }
+    datos.usuarios.push(nuevoUsuario);
+    fs.writeFileSync(archivo, JSON.stringify(datos, null, 2));
+
+    res.json({
+        success: true,
+        message: 'Usuario registrado',
+        data: nuevoUsuario
+    });
+} catch (error) {
+    res.status(500).json({ error: 'Error al guardar' });
+}
 });
 
 // 6. Iniciamos el servidor
