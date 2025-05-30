@@ -13,12 +13,12 @@ console.log('puerto:',PORT);
 
 // 4. Configuramos middleware para entender JSON
 app.use(express.json());
-app.use(express.static('public')); // Para servir archivos estáticos
+app.use(express.static('public'));
 
-// 5. Ruta para registrar usuarios (POST)
+// Ruta POST para registrar usuarios
 app.post('/registrar-usuario', (req, res) => {
     const { nombre, email, redsocial } = req.body;
-    
+
     if (!nombre || !email) {
         return res.status(400).json({ error: 'Nombre y email son requeridos' });
     }
@@ -30,30 +30,27 @@ app.post('/registrar-usuario', (req, res) => {
         fecha: new Date().toISOString()
     };
 
-    // Guardamos en el archivo JSON
-    // Guardamos en el archivo JSON
-const archivo = 'usuario.json';
-let datos = { usuarios:[nombre , email , redsocial]
-} 
+    const archivo = 'usuario.json';
+    let datos = { usuarios: [] };
 
-try {
-    if (fs.existsSync(archivo)) {
-        datos = JSON.parse(fs.readFileSync(archivo, 'utf8'));
+    try {
+        if (fs.existsSync(archivo)) {
+            datos = JSON.parse(fs.readFileSync(archivo, 'utf8'));
+        }
+        datos.usuarios.push(nuevoUsuario);
+        fs.writeFileSync(archivo, JSON.stringify(datos, null, 2));
+
+        res.json({
+            success: true,
+            message: 'Usuario registrado',
+            data: nuevoUsuario
+        });
+    } catch (error) {
+        res.status(500).json({ error: 'Error al guardar' });
     }
-    datos.usuarios.push(nuevoUsuario);
-    fs.writeFileSync(archivo, JSON.stringify(datos, null, 2));
-
-    res.json({
-        success: true,
-        message: 'Usuario registrado',
-        data: nuevoUsuario
-    });
-} catch (error) {
-    res.status(500).json({ error: 'Error al guardar' });
-}
 });
 
-// 6. Iniciamos el servidor
+// Iniciar el servidor
 app.listen(PORT, () => {
     console.log(`✅ Servidor funcionando en http://localhost:${PORT}`);
 });

@@ -1,41 +1,42 @@
- document.getElementById('formRegistro').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    const datos = {
-        nombre: document.getElementById('nombre').value,
-        email: document.getElementById('email').value,
-        redsocial: document.getElementById('redsocial').value
-    };
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('formRegistro').addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-    try {
-        const response = await fetch('/registrar-usuario', {
-            method: 'post',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({nombre, eamil ,redsocial})
-        });
-        const data = await respuesta.json();
-        alert(data.mensaje || data.error);
+        const nombre = document.getElementById('nombre').value;
+        const email = document.getElementById('email').value;
+        const redsocial = document.getElementById('redsocial').value;
 
-
-        if (response.ok) {
+        try {
+            const response = await fetch('/registrar-usuario', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ nombre, email, redsocial })
+            });
+            let data;
+            try {
+                data = await response.json();
+            } catch (jsonError) {
+                throw new Error('No se pudo interpretar la respuesta del servidor.');
+            }
+            if (!response.ok) {
+                throw new Error(data.error || 'Error en el registro');
+            }
             document.getElementById('resultado').innerHTML = `
                 <div class="alert success">
-                    <h3>✅ ${result.message}</h3>
-                    <p>Nombre: ${result.data.nombre}</p>
-                    <p>Email: ${result.data.email}</p>
+                    <h3>✅ ${data.message}</h3>
+                    <p>Nombre: ${data.data?.nombre || ''}</p>
+                    <p>Email: ${data.data?.email || ''}</p>
                 </div>
             `;
             document.getElementById('formRegistro').reset();
-        } else {
-            throw new Error(result.error || 'Error en el registro');
+        } catch (error) {
+            document.getElementById('resultado').innerHTML = `
+                <div class="alert error">
+                    ❌ Error: ${error.message}
+                </div>
+            `;
         }
-    } catch (error) {
-        document.getElementById('resultado').innerHTML = `
-            <div class="alert error">
-                ❌ Error: ${error.message}
-            </div>
-        `;
-    }
+    });
 });
