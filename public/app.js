@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         try {
             const response = await fetch('/registrar-usuario', {
-                method: 'POST',
+                method: 'POST', // Corregido a mayúsculas
                 headers: {
                     'Content-Type': 'application/json'
                 },

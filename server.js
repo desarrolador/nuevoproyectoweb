@@ -46,6 +46,7 @@ app.post('/registrar-usuario', (req, res) => {
             data: nuevoUsuario
         });
     } catch (error) {
+        console.error('Error al guardar usuario:', error); // Log del error real
         res.status(500).json({ error: 'Error al guardar' });
     }
 });
