@@ -35,10 +35,23 @@ app.post('/registrar-usuario', (req, res) => {
 
     try {
         if (fs.existsSync(archivo)) {
-            datos = JSON.parse(fs.readFileSync(archivo, 'utf8'));
+            try {
+                const contenido = fs.readFileSync(archivo, 'utf8');
+                datos = JSON.parse(contenido);
+                if (!Array.isArray(datos.usuarios)) {
+                    datos = { usuarios: [] };
+                }
+            } catch (err) {
+                // Si hay error al leer o parsear, regenerar el archivo
+                datos = { usuarios: [] };
+            }
         }
         datos.usuarios.push(nuevoUsuario);
         fs.writeFileSync(archivo, JSON.stringify(datos, null, 2));
+
+        // Mostrar en consola el usuario registrado y la IP
+        console.log('Usuario registrado:', nuevoUsuario);
+        console.log('Registro desde:', req.ip);
 
         res.json({
             success: true,
@@ -49,6 +62,17 @@ app.post('/registrar-usuario', (req, res) => {
         console.error('Error al guardar usuario:', error); // Log del error real
         res.status(500).json({ error: 'Error al guardar' });
     }
+});
+
+// Manejo de errores para rutas no encontradas
+app.use((req, res, next) => {
+    res.status(404).json({ error: 'Ruta no encontrada' });
+});
+
+// Manejo de errores generales
+app.use((err, req, res, next) => {
+    console.error('Error general:', err);
+    res.status(500).json({ error: 'Error interno del servidor' });
 });
 
 // Iniciar el servidor

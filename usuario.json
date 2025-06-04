@@ -1,0 +1,22 @@
+{
+  "usuarios": [
+    {
+      "nombre": "miguel",
+      "email": "desarrollador915@gmail.com",
+      "redsocial": "migue.it2",
+      "fecha": "2025-06-04T20:23:40.268Z"
+    },
+    {
+      "nombre": "miguel",
+      "email": "desarrollador915@gmail.com",
+      "redsocial": "migue.it2",
+      "fecha": "2025-06-04T20:24:29.948Z"
+    },
+    {
+      "nombre": "miguel",
+      "email": "desarrollador915@gmail.com",
+      "redsocial": "migue.it2",
+      "fecha": "2025-06-04T20:27:10.063Z"
+    }
+  ]
+}
