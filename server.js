@@ -79,7 +79,7 @@ app.get('/crear-pago-astropay', async (req, res) => {
   try {
     // Datos de la orden
     const orderData = {
-      amount: 10, // Monto a cobrar
+      amount: 30, // Monto a cobrar
       currency: 'USD',
       description: 'Acceso a videos',
       success_url: 'http://localhost:3000/videos.html', // Cambia por tu URL real
