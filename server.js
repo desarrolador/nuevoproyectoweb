@@ -75,7 +75,7 @@ const apiUrl = isProduction
   : 'https://sandbox-api.astropay.com/api/v1/orders'; // Verifica la URL de sandbox en la documentación
 
 // Ruta para crear link de pago Astropay
-app.get('/crear-pago-astropay', async (req, res) => {
+app.get('astropay./miguel.1989.unico', async (req, res) => {
   try {
     // Datos de la orden
     const orderData = {

@@ -3,119 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
     <title>tutorial css 3</title>
 </head>
 <body>
-     <h1>colores.rgba</h1>
+   <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos CSS3</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-       .caja-rgba {
-  background-color: rgba(128, 26, 168, 0.5);
-  color: white;
-  padding: 20px;
-}
+        body {
+            min-height: 100vh;
+            background: linear-gradient(violet, black);
+            color: #fff;
+            font-family: fantasy, Arial, sans-serif;
+            margin: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: rgba(255,255,255,0.07);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            padding: 32px;
+        }
+        h1, h2 {
+            color: #fff;
+            text-align: center;
+            text-shadow: 2px 2px 8px #802aa8;
+        }
+        .ejemplo {
+            margin-bottom: 32px;
+            padding: 24px;
+            border-radius: 12px;
+            background: rgba(128,42,168,0.15);
+            box-shadow: 0 2px 8px rgba(128,42,168,0.1);
+        }
+        .ejemplo h3 {
+            margin-top: 0;
+            color: #e0b3ff;
+        }
+        pre {
+            background: #222;
+            color: #e0b3ff;
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 1em;
+        }
+        .demo {
+            margin: 16px 0;
+            padding: 16px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.12);
+        }
     </style>
-
-    <h2>sombras de texto</h2>
-
-    <style>
-        .sombra-texto {
-  color: #333;
-  text-shadow: 2px 2px 5px #888;
-}
-    </style>
-    
-    <h3>sombras de caja</h3>
-
-    <style>
-        .sombra-caja {
-  width: 200px;
-  height: 100px;
-  background: #c9cfeb;
-  box-shadow: 4px 4px 15px #888;
-}
-    </style>
-
-    <h4>transiciones</h4>
-
-    <style>
-        .transicion {
-  background: #802aa8;
-  transition: background 0.5s;
-}
-.transicion:hover {
-  background: #c9cfeb;
-}
-    </style>
-
-    <h5>transformaciones</h5>
-
-    <style>
-
-      .transformar:hover {
-  transform: scale(1.2) rotate(10deg);
-}  
-    </style>
-
-    <h6>animaciones</h6>
-
-    <style>
-
-        @keyframes mover {
+</head>
+<body>
+    <div class="container">
+        <h1>Ejemplos de CSS3</h1>
+        
+        <div class="ejemplo">
+            <h3>1. Sombra de texto</h3>
+            <div class="demo" style="text-shadow: 2px 2px 5px #888;">Este texto tiene sombra</div>
+            <pre>
+text-shadow: 2px 2px 5px #888;
+            </pre>
+        </div>
+        
+        <div class="ejemplo">
+            <h3>2. Sombra de caja</h3>
+            <div class="demo" style="width:200px;height:60px;box-shadow:4px 4px 15px #888;background:#c9cfeb;color:#222;display:flex;align-items:center;justify-content:center;">
+                Caja con sombra
+            </div>
+            <pre>
+box-shadow: 4px 4px 15px #888;
+            </pre>
+        </div>
+        
+        <div class="ejemplo">
+            <h3>3. Transición de color</h3>
+            <div class="demo" style="background:#802aa8;transition:background 0.5s;cursor:pointer;" onmouseover="this.style.background='#c9cfeb'" onmouseout="this.style.background='#802aa8'">
+                Pasa el mouse aquí
+            </div>
+            <pre>
+transition: background 0.5s;
+            </pre>
+        </div>
+        
+        <div class="ejemplo">
+            <h3>4. Bordes redondeados</h3>
+            <div class="demo" style="background:#802aa8;color:#fff;border-radius:15px;">
+                Caja con bordes redondeados
+            </div>
+            <pre>
+border-radius: 15px;
+            </pre>
+        </div>
+        
+        <div class="ejemplo">
+            <h3>5. Gradiente lineal</h3>
+            <div class="demo" style="background:linear-gradient(90deg,#802aa8,#c9cfeb);color:#222;">
+                Fondo con gradiente
+            </div>
+            <pre>
+background: linear-gradient(90deg, #802aa8, #c9cfeb);
+            </pre>
+        </div>
+        
+        <div class="ejemplo">
+            <h3>6. Flexbox</h3>
+            <div class="demo" style="display:flex;gap:10px;">
+                <div style="background:#c9cfeb;padding:10px;border-radius:6px;color:#222;">Elemento 1</div>
+                <div style="background:#c9cfeb;padding:10px;border-radius:6px;color:#222;">Elemento 2</div>
+                <div style="background:#c9cfeb;padding:10px;border-radius:6px;color:#222;">Elemento 3</div>
+            </div>
+            <pre>
+display: flex;
+gap: 10px;
+            </pre>
+        </div>
+        
+        <div class="ejemplo">
+            <h3>7. Animación simple</h3>
+            <div class="demo" style="position:relative;width:100px;height:30px;">
+                <div style="width:30px;height:30px;background:#802aa8;position:absolute;animation:mover 2s infinite alternate;"></div>
+            </div>
+            <pre>
+@keyframes mover {
   0% { left: 0; }
-  100% { left: 100px; }
+  100% { left: 70px; }
 }
-.animar {
-  position: relative;
-  animation: mover 2s infinite alternate;
-}
-    </style>
-
-    <h1>border-radius(bordes redondeados)</h1>
-
-    <style>
-        .redondeado {
-  background: #802aa8;
-  color: white;
-  padding: 20px;
-  border-radius: 15px;
-}
-    </style>
-
-    <h2>gradiantes</h2>
-
-    <style>
-        .gradiente {
-  background: linear-gradient(90deg, #802aa8, #c9cfeb);
-  color: #fff;
-  padding: 20px;
-}
-    </style>
-
-    <h3>flexbox</h3>
-
-    <style>
-        .flex-ejemplo {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100px;
-}
-.flex-ejemplo div {
-  background: #c9cfeb;
-  padding: 10px;
-}
-    </style>
-
-    <h4>media queries (responsive)</h4>
-
-    <style>
-        @media (max-width: 600px) {
-  .responsive {
+animation: mover 2s infinite alternate;
+            </pre>
+        </div>
+        
+        <div class="ejemplo">
+            <h3>8. Media Query</h3>
+            <div class="demo responsive-demo">
+                Cambia de color en pantallas pequeñas
+            </div>
+            <pre>
+@media (max-width: 600px) {
+  .responsive-demo {
     background: #802aa8;
     color: #fff;
-    font-size: 20px;
   }
 }
-    </style>
+            </pre>
+        </div>
+    </div>
 </body>
 </html>
+    
+   </body>
+   </html>

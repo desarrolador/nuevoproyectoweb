@@ -1,5 +1,5 @@
 {
-  "users": [
+  "users"; [
     {
       "partner_user_id": "eXiiAD13o99",
       "user_id": "aksdjadja123123",
