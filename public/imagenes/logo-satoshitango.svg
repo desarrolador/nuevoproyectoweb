@@ -1,0 +1,7 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="120" rx="28" fill="#1a0033"/>
+  <circle cx="60" cy="60" r="44" fill="#00bcd4"/>
+  <text x="60" y="70" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="38" font-weight="bold" fill="#fff" letter-spacing="2">ST</text>
+  <ellipse cx="60" cy="60" rx="38" ry="18" fill="#fff" fill-opacity="0.08"/>
+  <ellipse cx="60" cy="80" rx="28" ry="8" fill="#fff" fill-opacity="0.10"/>
+</svg>

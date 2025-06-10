@@ -109,82 +109,120 @@ body {
         .success { background: #e8f5e9; color: #2e7d32; }
         .error { background: #ffebee; color: #c62828; }
 /* Diseño para el enlace de Mercado Pago */
-.alogo.button {
+.satoshitango-btn {
+    background: linear-gradient(90deg, #f7f7f7 0%, #00bcd4 100%);
+    box-shadow: 0 4px 16px rgba(0,188,212,0.10);
+    border: none;
+    transition: background 0.3s, transform 0.2s;
+    cursor: pointer;
     display: inline-block;
     margin: 30px auto 0 auto;
-    padding: 18px 36px;
-    border-radius: 30px;
-    background: linear-gradient(90deg, #8e2de2 0%, #4a00e0 100%);
-    box-shadow: 0 4px 16px rgba(142,45,226,0.15);
-    transition: background 0.3s, transform 0.2s;
+    padding: 1px ;
     text-align: center;
 }
-
-.alogo.button:hover {
-    background: linear-gradient(90deg, #4a00e0 0%, #8e2de2 100%);
+.satoshitango-btn:hover {
+    background: linear-gradient(90deg, #00bcd4 0%, #f7f7f7 100%);
     transform: scale(1.05);
 }
-
-.imglogo {
+.satoshitango-logo {
     width: 120px;
     height: auto;
     vertical-align: middle;
     border-radius: 16px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    box-shadow: 0 2px 8px rgba(0,188,212,0.10);
     transition: box-shadow 0.3s;
 }
-
-.alogo.button:hover .imglogo {
-    box-shadow: 0 4px 16px rgba(142,45,226,0.25);
+.satoshitango-btn:hover .satoshitango-logo {
+    box-shadow: 0 4px 16px rgba(0,188,212,0.25);
 }
 
+.section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px 32px;
+    margin: 40px 0 60px 0;
+    justify-items: center;
+    align-items: stretch;
+    padding: 0 10px;
+}
+.section > div {
+    background: linear-gradient(135deg, rgba(26,0,51,0.92) 0%, rgba(74,0,224,0.85) 100%);
+    /* Gótico y moderno */
+    border-radius: 22px;
+    box-shadow: 0 6px 32px rgba(74,0,224,0.18);
+    padding: 24px 18px 18px 18px;
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.3s, transform 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+.section > div:hover {
+    box-shadow: 0 12px 48px rgba(74,0,224,0.28);
+    transform: translateY(-4px) scale(1.03);
+}
+.section h1 {
+    color: #fff;
+    font-size: 1.1em;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px #1a0033;
+    background: linear-gradient(90deg, #fff 60%, #a259e6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
 #mivideo {
     width: 100%;
-    height: auto;
+    max-width: 360px;
     border-radius: 16px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.10);
-    transition:box-shadow 0.3s;
-    
+    background: #000;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 16px rgba(74,0,224,0.18);
+    transition: box-shadow 0.3s, transform 0.2s;
 }
-
-
-
-
+.section > div:hover #mivideo {
+    box-shadow: 0 6px 32px rgba(74,0,224,0.28);
+    transform: scale(1.02);
+}
 .footer {
     display: flex;
-    justify-content:flex-end;
+    justify-content: center;
     align-items: center;
-    padding: 20px 40px 0 0;
-    background:transparent;
-    
-    
+    padding: 32px 0 0 0;
+    background: transparent;
+    margin-top: 40px;
 }
-
-.footer .ul{
-    display:flex;
-    color: rgb(128, 26, 168);
-    gap: 30px;
+.footer .ul {
+    display: flex;
+    flex-direction: row;
+    gap: 36px;
     list-style-type: none;
     font-family: fantasy;
     font-size: large;
     margin: 0;
     padding: 0;
-    
 }
-
-
 .footer .ul .li .a {
-    color: rgb(128, 26, 168);
+    color: #a259e6;
+    background: linear-gradient(90deg, #4a00e0 0%, #1a0033 100%);
+    padding: 10px 24px;
+    border-radius: 18px;
     text-decoration: none;
-    font-family: fantasy;
-    font-size: large;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
     cursor: pointer;
-    transition: 0.2s;
+    transition: background 0.3s, color 0.2s;
 }
-
 .footer .ul .li .a:hover {
-    cursor: pointer;
-    color:black;
+    background: linear-gradient(90deg, #a259e6 0%, #4a00e0 100%);
+    color: #fff;
+    box-shadow: 0 2px 12px rgba(74,0,224,0.18);
 }
 
 @media (max-width: 700px) {
@@ -220,12 +258,18 @@ body {
         gap: 10px;
     }
 
-    .alogo.button {
+    .satoshitango-btn {
         padding: 12px 18px;
         font-size: 1em;
     }
 
-    .imglogo {
+    .satoshitango-logo {
         width: 80px;
+    }
+}
+
+@media (max-width: 900px) {
+    .section {
+        grid-template-columns: 1fr;
     }
 }
