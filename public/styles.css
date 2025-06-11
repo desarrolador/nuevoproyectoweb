@@ -109,31 +109,36 @@ body {
         .success { background: #e8f5e9; color: #2e7d32; }
         .error { background: #ffebee; color: #c62828; }
 /* Diseño para el enlace de Mercado Pago */
-.satoshitango-btn {
-    background: linear-gradient(90deg, #f7f7f7 0%, #00bcd4 100%);
-    box-shadow: 0 4px 16px rgba(0,188,212,0.10);
-    border: none;
-    transition: background 0.3s, transform 0.2s;
-    cursor: pointer;
-    display: inline-block;
-    margin: 30px auto 0 auto;
-    padding: 1px ;
-    text-align: center;
+.satoshitango-gothic-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 28px 60px;
+  border-radius: 38px;
+  background: linear-gradient(120deg, #2d014d 0%, #4a00e0 60%, #1a0033 100%);
+  color: #fff;
+  font-family: 'UnifrakturCook', 'Cinzel Decorative', 'Segoe UI', Arial, sans-serif;
+  font-size: 1.35em;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 8px #000, 0 0 2px #4a00e0;
+  border: 2.5px solid #a259e6;
+  box-shadow: 0 12px 40px rgba(74,0,224,0.30);
+  transition: background 0.3s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+  cursor: pointer;
+  text-decoration: none;
 }
-.satoshitango-btn:hover {
-    background: linear-gradient(90deg, #00bcd4 0%, #f7f7f7 100%);
-    transform: scale(1.05);
+.satoshitango-gothic-btn:hover {
+  background: linear-gradient(120deg, #4a00e0 0%, #2d014d 100%);
+  color: #fff;
+  box-shadow: 0 16px 56px rgba(74,0,224,0.40);
+  transform: scale(1.06);
+  cursor: pointer;
 }
-.satoshitango-logo {
-    width: 120px;
-    height: auto;
-    vertical-align: middle;
-    border-radius: 16px;
-    box-shadow: 0 2px 8px rgba(0,188,212,0.10);
-    transition: box-shadow 0.3s;
+.satoshitango-gothic-btn:active {
+  filter: brightness(0.95);
 }
-.satoshitango-btn:hover .satoshitango-logo {
-    box-shadow: 0 4px 16px rgba(0,188,212,0.25);
+.satoshitango-gothic-btn, .satoshitango-gothic-btn * {
+  cursor: pointer !important;
 }
 
 .section {
